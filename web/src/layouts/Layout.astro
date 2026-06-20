@@ -4,24 +4,82 @@ import '../styles/global.css'
 interface Props {
   title?: string
   description?: string
+  canonical?: string
 }
 
 const {
   title = 'Ingeniería Millar — Asesoría técnica para la industria minera',
-  description = 'Servicios de asesoría técnica e ingeniería para la industria minera e industrial. Más de 20 años de experiencia. Cobertura nacional.',
+  description = 'Más de 20 años de experiencia en asesoría técnica e ingeniería para la industria minera e industrial de Chile. Cobertura en Antofagasta, Calama, Santiago y Concepción.',
+  canonical = 'https://ingenieriamillar.cl/',
 } = Astro.props
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'Ingeniería Millar',
+  url: 'https://ingenieriamillar.cl',
+  logo: 'https://ingenieriamillar.cl/favicon.svg',
+  description,
+  email: 'contacto@ingenieriamillar.cl',
+  founder: { '@type': 'Person', name: 'Richard Millar Díaz' },
+  foundingDate: '2024',
+  areaServed: ['Antofagasta', 'Calama', 'Santiago', 'Concepción'],
+  address: { '@type': 'PostalAddress', addressCountry: 'CL', addressLocality: 'Antofagasta' },
+  serviceType: [
+    'Asesoría técnica minera',
+    'Mantención de plantas industriales',
+    'Eficiencia de procesos',
+    'Procedimientos técnicos',
+    'Capacitación industrial',
+    'Gestión de proyectos mineros',
+  ],
+  knowsAbout: ['Minería', 'Ingeniería Industrial', 'Mantención de plantas', 'Operaciones mineras'],
+}
 ---
 
 <html lang="es">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="description" content={description} />
+
+    <!-- SEO primario -->
     <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow, max-snippet:160, max-image-preview:large" />
+    <link rel="canonical" href={canonical} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:locale" content="es_CL" />
+    <meta property="og:site_name" content="Ingeniería Millar" />
+
+    <!-- Google Fonts: preconnect + stylesheet (performance skill: preconnect antes del stylesheet) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+    <!-- LCP: preload de la imagen hero (core-web-vitals skill) -->
+    <link
+      rel="preload"
+      href="https://bancoaudiovisual.marcachile.cl/images/b5fbe40d-d64c-483f-ae42-0cd8e54b7f66"
+      as="image"
+      fetchpriority="high"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+
+    <!-- Structured Data — LocalBusiness (SEO skill) -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   </head>
-  <body class="bg-white text-gray-900 font-sans antialiased">
+  <body class="bg-white text-[#0D0D0D] antialiased">
+    <!-- Skip link — accesibilidad WCAG 2.4.1 -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
     <slot />
   </body>
 </html>

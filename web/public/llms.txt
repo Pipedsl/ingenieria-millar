@@ -1,0 +1,28 @@
+# Ingeniería Millar — llms.txt
+# https://llmstxt.org/
+
+> Empresa chilena de asesoría técnica e ingeniería especializada en la industria minera e industrial.
+
+## Acerca de
+
+Ingeniería Millar ofrece servicios de asesoría técnica para empresas, equipos y proyectos
+vinculados a la industria minera e industrial de Chile. Fundada por Richard Millar Díaz,
+Ingeniero Civil Industrial con más de 20 años de experiencia en el rubro.
+
+## Servicios
+
+- Asesoría técnica minera
+- Mantención de plantas industriales
+- Eficiencia de procesos
+- Elaboración de procedimientos técnicos y documentación
+- Capacitación técnica para equipos de trabajo
+- Gestión de proyectos mineros e industriales
+
+## Cobertura
+
+Presencia nacional: Antofagasta, Calama, Santiago y Concepción.
+
+## Contacto
+
+- Web: https://ingenieriamillar.cl
+- Email: contacto@ingenieriamillar.cl

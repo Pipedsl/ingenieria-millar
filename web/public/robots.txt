@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap para indexación (SEO skill)
+Sitemap: https://ingenieriamillar.cl/sitemap-index.xml

@@ -1,56 +1,96 @@
 ---
 ---
 
-<section id="contacto" class="py-24 bg-gray-50">
+<section id="contacto" class="py-24 bg-[#F7F7F7]" aria-labelledby="contacto-heading">
   <div class="max-w-3xl mx-auto px-6">
+
     <div class="text-center mb-12">
-      <span class="text-[#C4610A] font-semibold text-sm uppercase tracking-widest">Escríbenos</span>
-      <h2 class="text-3xl md:text-4xl font-bold text-[#111111] mt-2">¿Tienes un proyecto o requerimiento técnico?</h2>
-      <p class="text-gray-500 mt-3">Conversemos.</p>
+      <div class="flex items-center justify-center gap-3 mb-4">
+        <span class="w-6 h-0.5 bg-[#C4610A]" aria-hidden="true"></span>
+        <span class="text-[#C4610A] text-xs font-semibold uppercase tracking-[0.2em]">Escríbenos</span>
+        <span class="w-6 h-0.5 bg-[#C4610A]" aria-hidden="true"></span>
+      </div>
+      <h2 id="contacto-heading" class="text-4xl md:text-5xl font-bold text-[#0D0D0D] mb-3" style="font-family:'Barlow Condensed',sans-serif">
+        ¿Tienes un proyecto o requerimiento técnico?
+      </h2>
+      <p class="text-gray-500">Conversemos.</p>
     </div>
 
-    <!-- TODO: conectar formulario a backend / servicio de email (Resend, Formspree, etc.) -->
-    <form class="bg-white border border-gray-200 rounded-xl p-8 shadow-sm space-y-5">
+    <!-- TODO: conectar a Resend / Formspree / endpoint propio -->
+    <form
+      class="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm space-y-5"
+      novalidate
+      aria-label="Formulario de contacto"
+    >
+      <!-- Región live para anunciar errores a lectores de pantalla (accessibility skill) -->
+      <div role="alert" aria-live="polite" class="visually-hidden" id="form-status"></div>
+
       <div class="grid sm:grid-cols-2 gap-5">
         <div>
-          <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nombre</label>
+          <label for="name" class="block text-sm font-medium text-[#0D0D0D] mb-1.5">
+            Nombre <span class="text-[#C4610A]" aria-label="requerido">*</span>
+          </label>
           <input
             type="text"
             id="name"
             name="name"
             required
-            placeholder="Tu nombre"
-            class="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#C4610A] transition-colors"
+            autocomplete="name"
+            placeholder="Tu nombre completo"
+            class="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#C4610A] focus:ring-1 focus:ring-[#C4610A] transition-colors min-h-[48px]"
+            aria-required="true"
           />
         </div>
         <div>
-          <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+          <label for="email" class="block text-sm font-medium text-[#0D0D0D] mb-1.5">
+            Email <span class="text-[#C4610A]" aria-label="requerido">*</span>
+          </label>
           <input
             type="email"
             id="email"
             name="email"
             required
-            placeholder="tu@email.com"
-            class="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#C4610A] transition-colors"
+            autocomplete="email"
+            placeholder="tu@empresa.cl"
+            class="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#C4610A] focus:ring-1 focus:ring-[#C4610A] transition-colors min-h-[48px]"
+            aria-required="true"
           />
         </div>
       </div>
 
       <div>
-        <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Mensaje</label>
+        <label for="company" class="block text-sm font-medium text-[#0D0D0D] mb-1.5">
+          Empresa / Organización
+        </label>
+        <input
+          type="text"
+          id="company"
+          name="company"
+          autocomplete="organization"
+          placeholder="Nombre de tu empresa (opcional)"
+          class="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#C4610A] focus:ring-1 focus:ring-[#C4610A] transition-colors min-h-[48px]"
+        />
+      </div>
+
+      <div>
+        <label for="message" class="block text-sm font-medium text-[#0D0D0D] mb-1.5">
+          Mensaje <span class="text-[#C4610A]" aria-label="requerido">*</span>
+        </label>
         <textarea
           id="message"
           name="message"
           required
           rows="5"
-          placeholder="Cuéntanos sobre tu proyecto o requerimiento..."
-          class="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#C4610A] transition-colors resize-none"
+          placeholder="Cuéntanos sobre tu proyecto o requerimiento técnico..."
+          class="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#C4610A] focus:ring-1 focus:ring-[#C4610A] transition-colors resize-none"
+          aria-required="true"
         ></textarea>
       </div>
 
       <button
         type="submit"
-        class="w-full bg-[#C4610A] hover:bg-[#E07B2A] text-white font-semibold py-4 rounded-lg transition-colors"
+        id="submit-btn"
+        class="w-full bg-[#C4610A] hover:bg-[#E07B2A] text-white font-semibold py-4 rounded-lg transition-colors text-base min-h-[52px] disabled:opacity-60 disabled:cursor-not-allowed"
       >
         Enviar mensaje
       </button>
@@ -58,10 +98,14 @@
 
     <!-- Datos de contacto -->
     <div class="flex flex-wrap justify-center gap-8 mt-10 text-sm text-gray-500">
-      <a href="mailto:contacto@ingenieriamillar.cl" class="hover:text-[#C4610A] transition-colors">
-        ✉ contacto@ingenieriamillar.cl
+      <a href="mailto:contacto@ingenieriamillar.cl" class="flex items-center gap-2 hover:text-[#C4610A] transition-colors min-h-[44px]">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+        </svg>
+        contacto@ingenieriamillar.cl
       </a>
       <!-- TODO: agregar teléfono cuando el cliente lo confirme -->
     </div>
+
   </div>
 </section>
