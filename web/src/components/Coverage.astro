@@ -1,9 +1,25 @@
 ---
 const cities = [
-  { name: 'Antofagasta', region: 'Región de Antofagasta' },
-  { name: 'Calama', region: 'Región de Antofagasta' },
-  { name: 'Santiago', region: 'Región Metropolitana' },
-  { name: 'Concepción', region: 'Región del Biobío' },
+  {
+    name: 'Antofagasta',
+    region: 'Región de Antofagasta',
+    image: 'https://bancoaudiovisual.marcachile.cl/images/9673ed6f-d72b-44ec-8d61-43a622f3de3a',
+  },
+  {
+    name: 'Calama',
+    region: 'Región de Antofagasta',
+    image: 'https://bancoaudiovisual.marcachile.cl/images/be09f1df-bb01-4611-8525-12e0f938af22',
+  },
+  {
+    name: 'Santiago',
+    region: 'Región Metropolitana',
+    image: 'https://bancoaudiovisual.marcachile.cl/images/b8b7dc44-d97b-4444-9df4-d82acaeccd55',
+  },
+  {
+    name: 'Concepción',
+    region: 'Región del Biobío',
+    image: 'https://bancoaudiovisual.marcachile.cl/images/c60dd987-5505-4a13-94dc-1286e3bb3d8f',
+  },
 ]
 ---
 
@@ -15,13 +31,20 @@ const cities = [
       Presencia en zonas estratégicas para la industria minera e industrial de Chile.
     </p>
 
-    <!-- TODO: agregar mapa de Chile con pines de ciudades -->
-    <div class="flex flex-wrap justify-center gap-6">
+    <!-- TODO: evaluar si reemplazar con mapa de Chile con pines -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
       {cities.map(city => (
-        <div class="text-center bg-gray-50 border border-gray-200 rounded-lg px-8 py-6 min-w-[160px]">
-          <div class="text-2xl mb-2">📍</div>
-          <div class="font-bold text-[#111111]">{city.name}</div>
-          <div class="text-xs text-gray-400 mt-1">{city.region}</div>
+        <div class="relative rounded-xl overflow-hidden aspect-[4/3] group">
+          <img
+            src={city.image}
+            alt={city.name}
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+          <div class="absolute bottom-0 inset-x-0 p-4 text-left text-white">
+            <div class="font-bold text-lg">📍 {city.name}</div>
+            <div class="text-xs text-white/70">{city.region}</div>
+          </div>
         </div>
       ))}
     </div>

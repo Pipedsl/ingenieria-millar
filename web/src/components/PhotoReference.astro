@@ -1,0 +1,40 @@
+---
+// Galería de referencia para el diseñador — eliminar antes del deploy final
+const photos = [
+  { url: 'https://bancoaudiovisual.marcachile.cl/images/d5a12fbe-b969-4e0b-b23e-37693cb290db', label: 'General' },
+  { url: 'https://bancoaudiovisual.marcachile.cl/images/159db60f-4d70-4791-8194-da2dabc19ef4', label: 'General' },
+  { url: 'https://bancoaudiovisual.marcachile.cl/images/9ec412f0-aca7-4ad9-9799-19f1e6f0e2de', label: 'General' },
+  { url: 'https://bancoaudiovisual.marcachile.cl/images/7fe03341-f66e-4101-97b0-096257ca09db', label: 'General' },
+  { url: 'https://bancoaudiovisual.marcachile.cl/images/57280f08-aff7-4d80-abb6-8a9be2619fe0', label: 'General' },
+  { url: 'https://bancoaudiovisual.marcachile.cl/images/c52098c3-a4ba-4389-84d6-e09886af6155', label: 'General' },
+]
+---
+
+<!-- ⚠️ SOLO PARA DISEÑO — eliminar este componente antes del deploy final -->
+<section class="py-16 bg-yellow-50 border-y-2 border-yellow-400">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="bg-yellow-400 text-yellow-900 text-xs font-bold px-2 py-1 rounded">REFERENCIA DISEÑADOR</span>
+      <p class="text-yellow-800 text-sm font-medium">
+        Fotos entregadas por el cliente — disponibles para usar en cualquier sección.
+        Eliminar este bloque antes del deploy.
+      </p>
+    </div>
+    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+      {photos.map((photo, i) => (
+        <a href={photo.url} target="_blank" rel="noopener noreferrer" class="group relative rounded-lg overflow-hidden aspect-video block">
+          <img
+            src={photo.url}
+            alt={`Foto ${i + 1} — ${photo.label}`}
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+          />
+          <div class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors flex items-center justify-center">
+            <span class="text-white text-xs opacity-0 group-hover:opacity-100 transition-opacity font-medium">
+              Ver original ↗
+            </span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
