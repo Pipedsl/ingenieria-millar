@@ -2,8 +2,9 @@
 const year = new Date().getFullYear()
 ---
 
-<footer class="bg-[#111111] text-gray-400 py-10">
-  <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm">
+<footer class="bg-[#111111] text-gray-400">
+  <!-- Contenido principal del footer -->
+  <div class="max-w-6xl mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-4 text-sm">
     <div>
       <span class="text-white font-semibold">Ingeniería Millar</span> © {year}
     </div>
@@ -13,18 +14,22 @@ const year = new Date().getFullYear()
     </div>
 
     <!-- TODO: agregar URLs reales de redes sociales cuando el cliente las entregue -->
-    <div class="flex items-center gap-6">
-      <div class="flex gap-4">
-        <a href="#" class="hover:text-[#C4610A] transition-colors">LinkedIn</a>
-        <a href="#" class="hover:text-[#C4610A] transition-colors">Instagram</a>
-      </div>
+    <div class="flex gap-4">
+      <a href="#" class="hover:text-[#C4610A] transition-colors">LinkedIn</a>
+      <a href="#" class="hover:text-[#C4610A] transition-colors">Instagram</a>
+    </div>
+  </div>
+
+  <!-- Atribución Webiados — separada por borde -->
+  <div class="border-t border-white/10">
+    <div class="max-w-6xl mx-auto px-6 py-3 flex justify-center">
       <a
         href="https://webiados.com"
         target="_blank"
         rel="noopener noreferrer"
-        class="flex items-center gap-1 text-gray-500 hover:text-white transition-colors"
+        class="flex items-center gap-1 text-xs text-gray-600 hover:text-gray-400 transition-colors"
       >
-        Un producto de <span class="text-white font-semibold ml-1">Webiados</span>
+        Diseñado y desarrollado por <span class="font-semibold ml-1">Webiados</span>
         <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-0.5" viewBox="0 0 20 20" fill="currentColor">
           <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
           <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
