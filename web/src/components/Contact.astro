@@ -1,0 +1,67 @@
+---
+---
+
+<section id="contacto" class="py-24 bg-gray-50">
+  <div class="max-w-3xl mx-auto px-6">
+    <div class="text-center mb-12">
+      <span class="text-[#C4610A] font-semibold text-sm uppercase tracking-widest">Escríbenos</span>
+      <h2 class="text-3xl md:text-4xl font-bold text-[#111111] mt-2">¿Tienes un proyecto o requerimiento técnico?</h2>
+      <p class="text-gray-500 mt-3">Conversemos.</p>
+    </div>
+
+    <!-- TODO: conectar formulario a backend / servicio de email (Resend, Formspree, etc.) -->
+    <form class="bg-white border border-gray-200 rounded-xl p-8 shadow-sm space-y-5">
+      <div class="grid sm:grid-cols-2 gap-5">
+        <div>
+          <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nombre</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            placeholder="Tu nombre"
+            class="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#C4610A] transition-colors"
+          />
+        </div>
+        <div>
+          <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            placeholder="tu@email.com"
+            class="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#C4610A] transition-colors"
+          />
+        </div>
+      </div>
+
+      <div>
+        <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Mensaje</label>
+        <textarea
+          id="message"
+          name="message"
+          required
+          rows="5"
+          placeholder="Cuéntanos sobre tu proyecto o requerimiento..."
+          class="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#C4610A] transition-colors resize-none"
+        ></textarea>
+      </div>
+
+      <button
+        type="submit"
+        class="w-full bg-[#C4610A] hover:bg-[#E07B2A] text-white font-semibold py-4 rounded-lg transition-colors"
+      >
+        Enviar mensaje
+      </button>
+    </form>
+
+    <!-- Datos de contacto -->
+    <div class="flex flex-wrap justify-center gap-8 mt-10 text-sm text-gray-500">
+      <a href="mailto:contacto@ingenieriamillar.cl" class="hover:text-[#C4610A] transition-colors">
+        ✉ contacto@ingenieriamillar.cl
+      </a>
+      <!-- TODO: agregar teléfono cuando el cliente lo confirme -->
+    </div>
+  </div>
+</section>

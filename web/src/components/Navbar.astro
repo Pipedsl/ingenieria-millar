@@ -1,0 +1,37 @@
+---
+const links = [
+  { label: 'Inicio', href: '#inicio' },
+  { label: 'Nosotros', href: '#nosotros' },
+  { label: 'Servicios', href: '#servicios' },
+  { label: 'Contacto', href: '#contacto' },
+]
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-[#111111]/95 backdrop-blur-sm">
+  <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+    <a href="#inicio" class="text-white font-bold text-lg tracking-wide">
+      Ingeniería <span class="text-[#C4610A]">Millar</span>
+    </a>
+
+    <!-- Desktop menu -->
+    <ul class="hidden md:flex items-center gap-8">
+      {links.map(link => (
+        <li>
+          <a
+            href={link.href}
+            class="text-gray-300 hover:text-[#C4610A] text-sm font-medium transition-colors"
+          >
+            {link.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+
+    <!-- Mobile hamburger placeholder -->
+    <button class="md:hidden text-white" aria-label="Abrir menú">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </nav>
+</header>

@@ -1,0 +1,29 @@
+---
+const cities = [
+  { name: 'Antofagasta', region: 'Región de Antofagasta' },
+  { name: 'Calama', region: 'Región de Antofagasta' },
+  { name: 'Santiago', region: 'Región Metropolitana' },
+  { name: 'Concepción', region: 'Región del Biobío' },
+]
+---
+
+<section class="py-24 bg-white">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <span class="text-[#C4610A] font-semibold text-sm uppercase tracking-widest">Dónde estamos</span>
+    <h2 class="text-3xl md:text-4xl font-bold text-[#111111] mt-2 mb-4">Cobertura nacional</h2>
+    <p class="text-gray-500 max-w-xl mx-auto mb-12">
+      Presencia en zonas estratégicas para la industria minera e industrial de Chile.
+    </p>
+
+    <!-- TODO: agregar mapa de Chile con pines de ciudades -->
+    <div class="flex flex-wrap justify-center gap-6">
+      {cities.map(city => (
+        <div class="text-center bg-gray-50 border border-gray-200 rounded-lg px-8 py-6 min-w-[160px]">
+          <div class="text-2xl mb-2">📍</div>
+          <div class="font-bold text-[#111111]">{city.name}</div>
+          <div class="text-xs text-gray-400 mt-1">{city.region}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

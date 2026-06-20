@@ -1,0 +1,28 @@
+# Dependencias
+web/node_modules/
+web/.npm
+
+# Build output
+web/dist/
+web/.astro/
+
+# Entorno local
+.env
+.env.local
+.env.*.local
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Editores
+.vscode/settings.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Logs
+*.log
+npm-debug.log*

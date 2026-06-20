@@ -1,0 +1,55 @@
+---
+const services = [
+  {
+    title: 'Asesoría técnica minera',
+    description: 'Apoyo especializado para operaciones, proyectos y procesos vinculados a la industria minera.',
+    icon: '⛏',
+  },
+  {
+    title: 'Mantención de plantas',
+    description: 'Asesoría en planificación, revisión, mejora y control de procesos asociados a mantención industrial y operacional.',
+    icon: '🔧',
+  },
+  {
+    title: 'Eficiencia de procesos',
+    description: 'Diagnóstico, análisis y propuestas de mejora para optimizar procesos y fortalecer la continuidad operacional.',
+    icon: '📈',
+  },
+  {
+    title: 'Procedimientos técnicos',
+    description: 'Elaboración, revisión y actualización de procedimientos, instructivos, protocolos, estándares y documentación técnica.',
+    icon: '📋',
+  },
+  {
+    title: 'Capacitación',
+    description: 'Desarrollo de charlas, talleres, material de apoyo y programas de formación técnica para equipos de trabajo.',
+    icon: '🎓',
+  },
+  {
+    title: 'Gestión de proyectos',
+    description: 'Acompañamiento técnico en planificación, control, seguimiento y mejora de proyectos de minería e industria.',
+    icon: '🗂',
+  },
+]
+---
+
+<section id="servicios" class="py-24 bg-gray-50">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-14">
+      <span class="text-[#C4610A] font-semibold text-sm uppercase tracking-widest">Lo que hacemos</span>
+      <h2 class="text-3xl md:text-4xl font-bold text-[#111111] mt-2">Nuestros servicios</h2>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {services.map(service => (
+        <div class="bg-white border border-gray-200 rounded-lg p-6 hover:border-[#C4610A] hover:shadow-md transition-all group">
+          <div class="text-3xl mb-4">{service.icon}</div>
+          <h3 class="font-bold text-[#111111] text-lg mb-2 group-hover:text-[#C4610A] transition-colors">
+            {service.title}
+          </h3>
+          <p class="text-gray-500 text-sm leading-relaxed">{service.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

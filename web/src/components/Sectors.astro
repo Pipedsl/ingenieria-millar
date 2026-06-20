@@ -1,0 +1,30 @@
+---
+const sectors = [
+  'Empresas mineras',
+  'Empresas contratistas de la minería',
+  'Plantas industriales',
+  'Áreas de mantención',
+  'Áreas de operaciones',
+  'Equipos de ingeniería',
+  'Pymes proveedoras de servicios técnicos',
+  'Instituciones que requieren capacitación técnica',
+]
+---
+
+<section class="py-24 bg-[#111111] text-white">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-14">
+      <span class="text-[#C4610A] font-semibold text-sm uppercase tracking-widest">¿A quién atendemos?</span>
+      <h2 class="text-3xl md:text-4xl font-bold mt-2">Sectores que servimos</h2>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      {sectors.map(sector => (
+        <div class="flex items-start gap-3 bg-white/5 border border-white/10 rounded-lg p-4">
+          <span class="text-[#C4610A] mt-0.5 shrink-0">✦</span>
+          <span class="text-gray-300 text-sm">{sector}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

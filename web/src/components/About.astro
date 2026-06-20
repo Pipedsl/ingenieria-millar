@@ -1,0 +1,47 @@
+---
+const stats = [
+  { value: '+20', label: 'años de experiencia' },
+  { value: 'Nacional', label: 'Presencia en Chile' },
+  { value: '6', label: 'áreas de servicio' },
+]
+---
+
+<section id="nosotros" class="py-24 bg-white">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <!-- Imagen fundador -->
+      <div class="bg-gray-100 rounded-lg aspect-[4/5] flex items-center justify-center">
+        <!-- TODO: reemplazar con foto del fundador -->
+        <span class="text-gray-400 text-sm">Foto de Richard Millar Díaz</span>
+      </div>
+
+      <!-- Texto -->
+      <div>
+        <span class="text-[#C4610A] font-semibold text-sm uppercase tracking-widest">Sobre nosotros</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-[#111111] mt-2 mb-6">
+          Experiencia técnica al servicio de la minería
+        </h2>
+        <p class="text-gray-600 mb-4 leading-relaxed">
+          Ingeniería Millar nace con el propósito de entregar asesoría técnica especializada a empresas,
+          profesionales y organizaciones relacionadas con la minería, la ingeniería industrial,
+          la mantención de plantas y la mejora de procesos.
+        </p>
+        <p class="text-gray-600 mb-8 leading-relaxed">
+          Su fundador, Richard Millar Díaz, es Ingeniero Civil Industrial con una trayectoria consolidada
+          de más de 20 años en la industria minera e industrial del país, con enfoque técnico,
+          estratégico y orientado a resultados.
+        </p>
+
+        <!-- Stats -->
+        <div class="flex gap-8">
+          {stats.map(s => (
+            <div>
+              <div class="text-2xl font-bold text-[#C4610A]">{s.value}</div>
+              <div class="text-sm text-gray-500">{s.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
